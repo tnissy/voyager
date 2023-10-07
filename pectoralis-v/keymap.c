@@ -123,22 +123,91 @@ void keyboard_post_init_user(void) {
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+    bool LED_1 = false;
+    bool LED_2 = false;
+    bool LED_3 = false;
+
     switch (get_highest_layer(state)) {
-    case 6:
-        rgb_matrix_mode_noeeprom(RGB_MATRIX_RAINBOW_MOVING_CHEVRON);
-        break;
-    case 7:
-        rgb_matrix_mode_noeeprom(RGB_MATRIX_MULTISPLASH);
-        break;
-    default: //  for any other layers, or the default layer
-        if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_COLOR) {
-            rgb_matrix_mode_noeeprom(RGB_MATRIX_NONE);
-        }
-        break;
+        case 2:
+        case 5:
+            LED_1 = true;
+            break;
+        case 6:
+            LED_3 = true;
+            break;
+        case 7:
+            LED_1 = true;
+            LED_2 = true;
+            break;
+        default:
+            break;
     }
-  return state;
+    STATUS_LED_1(LED_1);
+    STATUS_LED_2(LED_2);
+    STATUS_LED_3(LED_3);
+    return state;
 }
 
+
+// #if !defined(VOYAGER_USER_LEDS)
+// layer_state_t layer_state_set_kb(layer_state_t state) {
+//     state = layer_state_set_user(state);
+//     if (is_launching || !keyboard_config.led_level) return state;
+// #ifdef ORYX_ENABLE
+//     if (rawhid_state.rgb_control) return state;
+// #endif
+//     bool LED_1 = false;
+//     bool LED_2 = false;
+//     bool LED_3 = false;
+// #    if !defined(CAPS_LOCK_STATUS)
+//     bool LED_4 = false;
+// #    endif
+
+//     uint8_t layer = get_highest_layer(state);
+//     switch (layer) {
+//         case 1:
+//             LED_1 = true;
+//             break;
+//         case 2:
+//             LED_2 = true;
+//             break;
+//         case 3:
+//             LED_3 = true;
+//             break;
+//         case 4:
+// #    if !defined(CAPS_LOCK_STATUS)
+//             LED_4 = true;
+// #    endif
+//             break;
+//         case 5:
+//             LED_1 = true;
+//             LED_2 = true;
+//             break;
+//         case 6:
+//             LED_1 = true;
+//             LED_2 = true;
+//             LED_3 = true;
+//             break;
+//         case 7:
+//             LED_1 = true;
+//             LED_2 = true;
+//             LED_3 = true;
+// #    if !defined(CAPS_LOCK_STATUS)
+//             LED_4 = true;
+// #    endif
+//             break;
+//         default:
+//             break;
+//     }
+//     STATUS_LED_1(LED_1);
+//     STATUS_LED_2(LED_2);
+//     STATUS_LED_3(LED_3);
+// #    if !defined(CAPS_LOCK_STATUS)
+//     STATUS_LED_4(LED_4);
+// #    endif
+//     return state;
+// }
+// #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {

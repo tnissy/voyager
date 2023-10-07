@@ -3,6 +3,7 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 #define ORYX_CONFIGURATOR
+
 #define IGNORE_MOD_TAP_INTERRUPT
 #undef TAPPING_TERM
 #define TAPPING_TERM 150
@@ -10,6 +11,8 @@
 #define RETRO_TAPPING
 #define RETRO_TAPPING_PER_KEY
 #define PERMISSIVE_HOLD
+
+#define VOYAGER_USER_LEDS
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define CAPS_LOCK_STATUS
