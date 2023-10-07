@@ -117,9 +117,9 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 
 extern rgb_config_t rgb_matrix_config;
 
-void keyboard_post_init_user(void) {
-  rgb_matrix_enable_noeeprom();
-}
+// void keyboard_post_init_user(void) {
+//   rgb_matrix_enable_noeeprom();
+// }
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
