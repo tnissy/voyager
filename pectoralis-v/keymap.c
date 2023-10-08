@@ -28,6 +28,7 @@ enum custom_keycodes {
 };
 
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,      
@@ -37,17 +38,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRANSPARENT, KC_DELETE,                                      KC_SPACE,       KC_TRANSPARENT
   ),
   [1] = LAYOUT_voyager(
-    TG(2),          LALT(KC_F4),    LCTL(KC_W),     LALT(LGUI(KC_TAB)),LCTL(KC_F),     LALT(KC_TAB),                                   KC_NO,          RCTL(RSFT(KC_TAB)),RALT(KC_LEFT),  RALT(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
+    TO(2),          LALT(KC_F4),    LCTL(KC_W),     LGUI(KC_TAB),   LCTL(KC_F),     LALT(KC_TAB),                                   KC_NO,          RCTL(RSFT(KC_TAB)),RALT(KC_LEFT),  RALT(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
     ST_MACRO_0,     LCTL(KC_A),     LCTL(KC_S),     KC_LCTRL,       KC_LSHIFT,      ST_MACRO_1,                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
     LCTL(KC_Y),     LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     LGUI(KC_V),                                     KC_NO,          KC_HOME,        KC_PGDOWN,      KC_PGUP,        KC_END,         KC_NO,          
     KC_TRANSPARENT, KC_N,           KC_LGUI,        KC_LALT,        KC_TRANSPARENT, LGUI(LSFT(KC_S)),                                KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, LGUI(KC_L),                                     KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_LCBR,        KC_RCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_NO,          KC_PIPE,        
+    TO(0),          KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_LCBR,        KC_RCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_NO,          KC_PIPE,        
     KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DYN_MACRO_PLAY1,KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
-    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           KC_COMMA,       KC_DOT,         KC_ENTER,                                       KC_NO,          KC_TRANSPARENT, KC_CAPSLOCK,    KC_DQUO,        RSFT(KC_RCTRL), KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        RSFT(KC_RCTRL), 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           KC_COMMA,       KC_DOT,         KC_ENTER,                                       KC_NO,          KC_TRANSPARENT, KC_CAPSLOCK,    KC_DQUO,        KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_BSPACE,                                      ST_MACRO_2,     KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
@@ -58,17 +59,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [4] = LAYOUT_voyager(
-    TG(5),          LGUI(KC_Q),     LGUI(KC_W),     LCTL(KC_UP),    LGUI(KC_F),     LGUI(KC_TAB),                                   KC_NO,          RCTL(RSFT(KC_TAB)),RGUI(KC_LEFT),  RGUI(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
+    TO(5),          LGUI(KC_Q),     LGUI(KC_W),     LCTL(KC_UP),    LGUI(KC_F),     LGUI(KC_TAB),                                   KC_NO,          RCTL(RSFT(KC_TAB)),RGUI(KC_LEFT),  RGUI(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
     LGUI(KC_BSPACE),LGUI(KC_A),     LGUI(KC_S),     KC_LGUI,        KC_LSHIFT,      LCTL(KC_K),                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
     LGUI(KC_Y),     LGUI(KC_Z),     LGUI(KC_X),     LGUI(KC_C),     LGUI(KC_V),     LGUI(LCTL(KC_V)),                                KC_NO,          RCTL(KC_A),     KC_PGDOWN,      KC_PGUP,        RCTL(KC_E),     KC_NO,          
     KC_TRANSPARENT, KC_N,           KC_LCTRL,       KC_LALT,        KC_TRANSPARENT, LGUI(LCTL(LSFT(KC_4))),                                KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, LGUI(LCTL(KC_Q)),                                KC_NO,          KC_TRANSPARENT
   ),
   [5] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_LCBR,        KC_RCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_NO,          KC_PIPE,        
+    TO(3),          KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_LCBR,        KC_RCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_NO,          KC_PIPE,        
     KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DYN_MACRO_PLAY1,KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
-    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_LGUI,        KC_0,           KC_COMMA,       KC_DOT,         KC_ENTER,                                       KC_NO,          KC_TRANSPARENT, KC_CAPSLOCK,    KC_DQUO,        RALT(KC_RGUI),  KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        RALT(KC_RGUI),  
+    KC_TRANSPARENT, KC_LGUI,        KC_0,           KC_COMMA,       KC_DOT,         KC_ENTER,                                       KC_NO,          KC_TRANSPARENT, KC_CAPSLOCK,    KC_DQUO,        KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_BSPACE,                                      KC_NO,          KC_TRANSPARENT
   ),
   [6] = LAYOUT_voyager(
@@ -129,30 +130,36 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     switch (get_highest_layer(state)) {
         // base and Ignis no led, no anime
-        case 0:
-        case 1:
         case 3:
         case 4:
+            LED_2 = true;
+            // breakせずスルー
+        case 0:
+        case 1:
             if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_COLOR) {
                 rgb_matrix_sethsv_noeeprom(0, 0, 0);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
             }
             break;
         // AQUA
-        case 2:
         case 5:
             LED_2 = true;
+            // breakせずスルー
+        case 2:
+            LED_1 = true;
             if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_COLOR) {
                 rgb_matrix_sethsv_noeeprom(0, 0, 0);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
             }
             break;
+        // TERRA
         case 6:
             if (rgb_matrix_get_mode() != RGB_MATRIX_BAND_SPIRAL_VAL) {
                 rgb_matrix_sethsv_noeeprom(32, 255, 128);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_BAND_SPIRAL_VAL);
             }
             break;
+        // AER
         case 7:
             LED_3 = true;
             if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_REACTIVE_CROSS) {
