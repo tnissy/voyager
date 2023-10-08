@@ -117,10 +117,9 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 
 extern rgb_config_t rgb_matrix_config;
 
-void keyboard_post_init_user(void) {
-  rgb_matrix_enable_noeeprom();
-  rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
-}
+// void keyboard_post_init_user(void) {
+//     rgblight_sethsv_noeeprom(HSV_OFF)
+// }
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -132,15 +131,22 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case 2:
         case 5:
             LED_1 = true;
-            break;
+            // rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+            // rgb_matrix_set_color_all(0, 0, 0);
         case 6:
             LED_3 = true;
+            rgb_matrix_set_color_all(10, 255, 10);
+            rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_BREATHING);
             break;
         case 7:
             LED_1 = true;
             LED_2 = true;
+            rgb_matrix_set_color_all(255, 255, 10);
+            rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
             break;
         default:
+            // rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+            // rgb_matrix_set_color_all(0, 0, 0);
             break;
     }
     STATUS_LED_1(LED_1);
