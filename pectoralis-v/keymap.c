@@ -148,15 +148,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             }
             break;
         case 6:
-            if (rgb_matrix_get_mode() != RGB_MATRIX_HUE_BREATHING) {
-                rgb_matrix_sethsv_noeeprom(32, 255, 255);
-                rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_BREATHING);
+            if (rgb_matrix_get_mode() != RGB_MATRIX_BAND_SPIRAL_VAL) {
+                rgb_matrix_sethsv_noeeprom(32, 255, 128);
+                rgb_matrix_mode_noeeprom(RGB_MATRIX_BAND_SPIRAL_VAL);
             }
             break;
         case 7:
             LED_3 = true;
             if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_REACTIVE_CROSS) {
-                rgb_matrix_sethsv_noeeprom(121, 255, 255);
+                rgb_matrix_sethsv_noeeprom(121, 255, 128);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
             }
             break;
@@ -171,29 +171,43 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case KC_ENTER:
+    if (record->event.pressed) {
+      rgb_matrix_sethsv_noeeprom(201, 255, 255);
+      rgb_matrix_mode_noeeprom(RGB_MATRIX_SPLASH);
+    }
+    return true;
     case ST_MACRO_0:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT(SS_TAP(X_HOME)) SS_DELAY(50) SS_TAP(X_BSPACE));
     }
-    break;
+    return false;
     case ST_MACRO_1:
     if (record->event.pressed) {
       SEND_STRING(SS_LSFT(SS_TAP(X_END)) SS_DELAY(50) SS_TAP(X_DELETE));
     }
-    break;
+    return false;
     case ST_MACRO_2:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT(SS_LCTL(SS_TAP(X_DELETE))) SS_DELAY(300) "99295\t");
     }
-    break;
-    // case RGB_SLD:
-    //   if (record->event.pressed) {
-
-    //   }
-      return false;
+    return false;
   }
   return true;
 }
 
-
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case KC_ENTER:
+      break;
+    default:
+      if (!record->event.pressed) {
+        if (rgb_matrix_get_mode() == RGB_MATRIX_SPLASH) { 
+          rgb_matrix_sethsv_noeeprom(0, 0, 0);
+          rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+        }
+      }
+      break;
+  }
+}
 
