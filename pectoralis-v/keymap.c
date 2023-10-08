@@ -128,25 +128,39 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     bool LED_3 = false;
 
     switch (get_highest_layer(state)) {
+        // base and Ignis no led, no anime
+        case 0:
+        case 1:
+        case 3:
+        case 4:
+            if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_COLOR) {
+                rgb_matrix_sethsv_noeeprom(0, 0, 0);
+                rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+            }
+            break;
+        // AQUA
         case 2:
         case 5:
-            LED_1 = true;
-            // rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
-            // rgb_matrix_set_color_all(0, 0, 0);
+            LED_2 = true;
+            if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_COLOR) {
+                rgb_matrix_sethsv_noeeprom(0, 0, 0);
+                rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+            }
+            break;
         case 6:
-            LED_3 = true;
-            rgb_matrix_set_color_all(10, 255, 10);
-            rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_BREATHING);
+            if (rgb_matrix_get_mode() != RGB_MATRIX_HUE_BREATHING) {
+                rgb_matrix_sethsv_noeeprom(32, 30, 64);
+                rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_BREATHING);
+            }
             break;
         case 7:
-            LED_1 = true;
-            LED_2 = true;
-            rgb_matrix_set_color_all(255, 255, 10);
-            rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
+            LED_3 = true;
+            if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_REACTIVE_CROSS) {
+                rgb_matrix_sethsv_noeeprom(121, 30, 127);
+                rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
+            }
             break;
         default:
-            // rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
-            // rgb_matrix_set_color_all(0, 0, 0);
             break;
     }
     STATUS_LED_1(LED_1);
