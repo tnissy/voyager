@@ -149,14 +149,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             break;
         case 6:
             if (rgb_matrix_get_mode() != RGB_MATRIX_HUE_BREATHING) {
-                rgb_matrix_sethsv_noeeprom(32, 30, 64);
+                rgb_matrix_sethsv_noeeprom(32, 255, 255);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_HUE_BREATHING);
             }
             break;
         case 7:
             LED_3 = true;
             if (rgb_matrix_get_mode() != RGB_MATRIX_SOLID_REACTIVE_CROSS) {
-                rgb_matrix_sethsv_noeeprom(121, 30, 127);
+                rgb_matrix_sethsv_noeeprom(121, 255, 255);
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_REACTIVE_CROSS);
             }
             break;
