@@ -31,28 +31,28 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLASH,      
-    KC_ENTER,       KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_MINUS,       KC_SCOLON,      
+    KC_ESCAPE,      KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,        
+    KC_ENTER,       KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_MINUS,       KC_SCLN,        
     MT(MOD_LSFT, KC_TAB),KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       MT(MOD_RSFT, KC_QUOTE),
-    KC_TRANSPARENT, KC_LCTRL,       KC_LGUI,        KC_RALT,        LT(1,KC_SPACE), KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(2,KC_ENTER), RSFT(KC_RCTRL), KC_TRANSPARENT, LGUI(KC_S),     KC_TRANSPARENT, 
-                                                    LT(3,KC_LANG2), KC_DELETE,                                      KC_CAPSLOCK,    LT(8,KC_LANG1)
+    KC_TRANSPARENT, KC_RIGHT_ALT,   KC_LEFT_GUI,    MT(MOD_LCTL, KC_BSPC),LT(1,KC_SPACE), KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(2,KC_ENTER), RSFT(KC_RIGHT_CTRL),KC_TRANSPARENT, LGUI(KC_S),     KC_TRANSPARENT, 
+                                                    LT(3,KC_LANGUAGE_2),KC_DELETE,                                      KC_CAPS,        LT(8,KC_LANGUAGE_1)
   ),
   [1] = LAYOUT_voyager(
     TG(2),          LALT(KC_F4),    LCTL(KC_W),     KC_NO,          LCTL(KC_F),     KC_NO,                                          KC_NO,          RCTL(RSFT(KC_TAB)),RALT(KC_LEFT),  RALT(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
-    ST_MACRO_0,     LCTL(KC_A),     LCTL(KC_S),     KC_LCTRL,       KC_LSHIFT,      ST_MACRO_1,                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
-    LCTL(KC_Y),     LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     LGUI(KC_V),                                     KC_NO,          KC_HOME,        KC_PGDOWN,      KC_PGUP,        KC_END,         KC_NO,          
-    KC_TRANSPARENT, KC_N,           KC_LGUI,        KC_LALT,        KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
+    ST_MACRO_0,     LCTL(KC_A),     LCTL(KC_S),     KC_LEFT_CTRL,   KC_LEFT_SHIFT,  ST_MACRO_1,                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
+    LCTL(KC_Y),     LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     LGUI(KC_V),                                     KC_NO,          KC_HOME,        KC_PGDN,        KC_PAGE_UP,     KC_END,         KC_NO,          
+    KC_TRANSPARENT, KC_LEFT_ALT,    KC_LEFT_GUI,    KC_N,           KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
                                                     LGUI(KC_L),     KC_NO,                                          KC_NO,          KC_NO
   ),
   [2] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_NO,          KC_LCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_RCBR,        KC_PIPE,        
-    KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DYN_MACRO_PLAY1,KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
-    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_DQUO,        
+    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANGUAGE_2,                                  KC_NO,          KC_LCBR,        KC_LBRC,        KC_RBRC,        KC_RCBR,        KC_PIPE,        
+    KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DM_PLY1,        KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
+    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DM_PLY2,        KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_DQUO,        
     KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           KC_COMMA,       KC_DOT,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_SPACE,       KC_NO,          KC_TRANSPARENT, 
-                                                    KC_ENTER,       KC_BSPACE,                                      KC_NO,          ST_MACRO_2
+                                                    KC_ENTER,       KC_BSPC,                                        KC_NO,          ST_MACRO_2
   ),
   [3] = LAYOUT_voyager(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          RESET,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
     KC_NO,          KC_NO,          LALT(KC_TAB),   LGUI(KC_TAB),   LGUI(LSFT(KC_S)),KC_NO,                                          KC_NO,          KC_MS_BTN1,     KC_MS_UP,       KC_MS_BTN2,     KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO,                                          KC_NO,          KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_NO,          KC_NO,          
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
@@ -62,27 +62,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_LGUI,        KC_LALT,        KC_LCTRL,       LT(5,KC_LANG2), KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(6,KC_LANG1), RSFT(KC_RGUI),  KC_TRANSPARENT, RGUI(KC_SPACE), KC_TRANSPARENT, 
-                                                    LT(7,KC_BSPACE),KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(8,KC_ENTER)
+    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_LEFT_ALT,    MT(MOD_LGUI, KC_BSPC),LT(5,KC_LANGUAGE_2),KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(6,KC_LANGUAGE_1),RSFT(KC_RIGHT_GUI),KC_TRANSPARENT, RGUI(KC_SPACE), KC_TRANSPARENT, 
+                                                    LT(7,KC_BSPC),  KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(8,KC_ENTER)
   ),
   [5] = LAYOUT_voyager(
     TG(6),          LGUI(KC_Q),     LGUI(KC_W),     LCTL(LSFT(KC_R)),LGUI(KC_F),     KC_NO,                                          KC_NO,          RCTL(RSFT(KC_TAB)),RGUI(KC_LEFT),  RGUI(KC_RIGHT), RCTL(KC_TAB),   KC_NO,          
-    LGUI(KC_BSPACE),LGUI(KC_A),     LGUI(KC_S),     KC_LGUI,        KC_LSHIFT,      LCTL(KC_K),                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
-    LGUI(KC_Y),     LGUI(KC_Z),     LGUI(KC_X),     LGUI(KC_C),     LGUI(KC_V),     LGUI(LCTL(KC_V)),                                KC_NO,          RCTL(KC_A),     KC_PGDOWN,      KC_PGUP,        RCTL(KC_E),     KC_NO,          
-    KC_TRANSPARENT, KC_N,           KC_LCTRL,       KC_LALT,        KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
+    LGUI(KC_BSPC),  LGUI(KC_A),     LGUI(KC_S),     KC_LEFT_GUI,    KC_LEFT_SHIFT,  LCTL(KC_K),                                     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,          
+    LGUI(KC_Y),     LGUI(KC_Z),     LGUI(KC_X),     LGUI(KC_C),     LGUI(KC_V),     LGUI(LCTL(KC_V)),                                KC_NO,          RCTL(KC_A),     KC_PGDN,        KC_PAGE_UP,     RCTL(KC_E),     KC_NO,          
+    KC_TRANSPARENT, KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_N,           KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
                                                     LGUI(LCTL(KC_Q)),KC_NO,                                          KC_NO,          KC_NO
   ),
   [6] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANG2,                                       KC_NO,          KC_LCBR,        KC_LBRACKET,    KC_RBRACKET,    KC_RCBR,        KC_PIPE,        
-    KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DYN_MACRO_PLAY1,KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
-    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DYN_MACRO_PLAY2,KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_DQUO,        
-    KC_TRANSPARENT, KC_LGUI,        KC_0,           KC_COMMA,       KC_DOT,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, RALT(KC_RGUI),  KC_SPACE,       KC_NO,          KC_TRANSPARENT, 
-                                                    KC_ENTER,       KC_BSPACE,                                      KC_NO,          KC_NO
+    KC_TRANSPARENT, KC_NO,          KC_7,           KC_8,           KC_9,           KC_LANGUAGE_2,                                  KC_NO,          KC_LCBR,        KC_LBRC,        KC_RBRC,        KC_RCBR,        KC_PIPE,        
+    KC_TRANSPARENT, KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_TILD,                                        DM_PLY1,        KC_PLUS,        KC_LPRN,        KC_RPRN,        KC_UNDS,        KC_COLN,        
+    KC_TRANSPARENT, KC_COLN,        KC_1,           KC_2,           KC_3,           KC_GRAVE,                                       DM_PLY2,        KC_EQUAL,       KC_LABK,        KC_RABK,        KC_QUES,        KC_DQUO,        
+    KC_TRANSPARENT, KC_LEFT_GUI,    KC_0,           KC_COMMA,       KC_DOT,         KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, RALT(KC_RIGHT_GUI),KC_SPACE,       KC_NO,          KC_TRANSPARENT, 
+                                                    KC_ENTER,       KC_BSPC,                                        KC_NO,          KC_NO
   ),
   [7] = LAYOUT_voyager(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          DYN_REC_STOP,   KC_NO,          KC_NO,          KC_NO,          KC_NO,          RESET,          
-    KC_NO,          KC_NO,          LGUI(KC_TAB),   LCTL(KC_UP),    LGUI(LCTL(LSFT(KC_4))),KC_NO,                                          DYN_REC_START1, KC_MS_BTN1,     KC_MS_UP,       KC_MS_BTN2,     KC_NO,          KC_NO,          
-    KC_NO,          KC_NO,          KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO,                                          DYN_REC_START2, KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          DM_RSTP,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
+    KC_NO,          KC_NO,          LGUI(KC_TAB),   LCTL(KC_UP),    LGUI(LCTL(LSFT(KC_4))),KC_NO,                                          DM_REC1,        KC_MS_BTN1,     KC_MS_UP,       KC_MS_BTN2,     KC_NO,          KC_NO,          
+    KC_NO,          KC_NO,          KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO,                                          DM_REC2,        KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_NO,          KC_NO,          
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_NO,          KC_NO
   ),
@@ -104,9 +104,9 @@ const uint16_t PROGMEM combo5[] = { KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM combo6[] = { KC_H, KC_J, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, KC_DOWN),
+    COMBO(combo0, KC_SPACE),
     COMBO(combo1, KC_UP),
-    COMBO(combo2, KC_BSPACE),
+    COMBO(combo2, KC_DOWN),
     COMBO(combo3, KC_F10),
     COMBO(combo4, KC_F7),
     COMBO(combo5, KC_RIGHT),
@@ -115,6 +115,12 @@ combo_t key_combos[COMBO_COUNT] = {
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case LT(1,KC_SPACE):
+        case LT(5,KC_SPACE):
+        case LT(3,KC_LANGUAGE_2):
+        case LT(7,KC_LANGUAGE_2):
+        case LT(8,KC_LANGUAGE_1):
+            return true;
         default:
             return false;
     }
